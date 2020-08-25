@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "kendo-data-query-aggregates"
+    }
+  },
+  "defaultProject": "kendo-data-query-aggregates",
+  "cli": {
+    "analytics": false
+  }
 }
