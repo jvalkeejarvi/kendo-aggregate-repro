@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { aggregateBy, AggregateDescriptor, AggregateResult } from '@progress/kendo-data-query';
-import { data, dataWithMissingChild, dataWithMissingParent } from './data';
+import { dataWithUndefined, dataWithNull, dataWithMissing } from './data';
 
 @Component({
   selector: 'app-root',
@@ -9,14 +9,14 @@ import { data, dataWithMissingChild, dataWithMissingParent } from './data';
 })
 export class AppComponent {
   title = 'kendo-data-query-aggregates';
-  public readonly aggregates: AggregateResult;
-  public readonly aggregatesChildMissing: AggregateResult;
-  public readonly aggregatesParentMissing: AggregateResult;
+  public readonly aggregatesWithUndefined: AggregateResult;
+  public readonly aggregatesWithNull: AggregateResult;
+  public readonly aggregatesWithMissing: AggregateResult;
 
   public constructor() {
-    const descriptors: AggregateDescriptor[] = [{ field: 'c.d', aggregate: 'sum' }];
-    this.aggregates = aggregateBy(data, descriptors);
-    this.aggregatesChildMissing = aggregateBy(dataWithMissingChild, descriptors);
-    this.aggregatesParentMissing = aggregateBy(dataWithMissingParent, descriptors);
+    const descriptors: AggregateDescriptor[] = [{ field: 'a', aggregate: 'sum' }];
+    this.aggregatesWithUndefined = aggregateBy(dataWithUndefined, descriptors);
+    this.aggregatesWithNull = aggregateBy(dataWithNull, descriptors);
+    this.aggregatesWithMissing = aggregateBy(dataWithMissing, descriptors);
   }
 }

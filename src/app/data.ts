@@ -1,21 +1,20 @@
-export const data = [
-  { a: 1, b: 2, c: { d: 3 } },
-  { a: 1, b: 2, c: { d: 3 } },
-  { a: 1, b: 2, c: { d: 3 } },
-  { a: 1, b: 2, c: { d: 3 } },
-];
-
-
-export const dataWithMissingParent = [
-  { a: 1, b: 2, c: { d: 3 } },
-  { a: 1, b: 2, c: { d: 3 } },
+export const dataWithUndefined = [
   { a: 1, b: 2 },
-  { a: 1, b: 2, c: { d: 3 } },
+  { a: undefined, b: 2 },
+  { a: 1, b: 2 },
+  { a: 1, b: 2 },
 ];
 
-export const dataWithMissingChild = [
-  { a: 1, b: 2, c: { d: 3 } },
-  { a: 1, b: 2, c: { } },
-  { a: 1, b: 2, c: { d: 3 } },
-  { a: 1, b: 2, c: { d: 3 } },
+export const dataWithNull = [
+  { a: 1, b: 2 },
+  { a: null, b: 2 },
+  { a: 1, b: 2 },
+  { a: 1, b: 2 },
+];
+
+export const dataWithMissing = [
+  { a: 1, b: 2 },
+  { b: 2 },
+  { a: 1, b: 2 },
+  { a: 1, b: 2 },
 ];
